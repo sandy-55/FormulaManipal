@@ -24,12 +24,12 @@ int main()
 	while ((ch = fgetc(file)) != EOF) 
 	{
 		charCount++;
-
-		// Count lines
+		
 		if (ch == '\n')
+		{
 			lineCount++;
-
-		// Count words
+		}
+		
 		if (ch == ' ' || ch == '\t' || ch == '\n' || ch == '\r') 
 		{
 			if (inWord) 
@@ -44,13 +44,15 @@ int main()
 		}
 	}
 
-	// Count the last word if the file does not end with a space or newline
 	if (inWord)
+	{
 		wordCount++;
+	}
 
-	// If the file is not empty, increment line count for the last line (if no trailing newline)
 	if (charCount > 0 && ch != '\n')
+	{
 		lineCount++;
+	}
 
 	printf("Characters: %d\n", charCount);
 	printf("Words: %d\n", wordCount);
