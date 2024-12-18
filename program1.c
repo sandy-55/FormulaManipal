@@ -1,4 +1,4 @@
-//Program1 (Change it to float)
+//Program1 
 
 #include <stdio.h>
 
