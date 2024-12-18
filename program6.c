@@ -2,6 +2,8 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+#include <time.h>
 
 int main()
 {
@@ -43,6 +45,16 @@ int main()
 
     printf("Number of Vowels = %d\n", vowel);
     printf("Number of Consonants = %d\n", consonant);
+
+    srand(time(0));
+    for(i = 0; i < len - 1; i++)
+    {
+        int j = i + rand() % (len - i); // Select a random index
+        char temp = str[i];
+        str[i] = str[j];
+        str[j] = temp;
+    }
+    printf("Scrambled String: %s\n", str);
 
     return 0;
 }
